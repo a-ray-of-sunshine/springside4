@@ -3,6 +3,8 @@
 	<excludes>
 		<pattern>/static/*</pattern>
 		<pattern>/api/*</pattern>
+		<!-- h2 web console 界面在外 -->
+		<pattern>/console/*</pattern>
 	</excludes>
 	
 	<decorator name="default" page="default.jsp">
