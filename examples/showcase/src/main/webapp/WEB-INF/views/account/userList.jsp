@@ -36,7 +36,9 @@
 			<th>电邮</th>
 			<th>角色</th>
 			<th>状态</th>
-			<th>操作</th>
+			<shiro:hasPermission name="user:edit">
+				<th>操作</th>
+			</shiro:hasPermission>
 		</tr>
 		</thead>
 		<tbody>
@@ -47,11 +49,11 @@
 				<td>${user.email}&nbsp;</td>
 				<td>${user.roleNames}&nbsp;</td>
 				<td>${allStatus[user.status]}&nbsp;</td>
-				<td>
-					<shiro:hasPermission name="user:edit">
+				<shiro:hasPermission name="user:edit">
+					<td>
 						<a href="${ctx}/account/user/update/${user.id}" id="editLink-${user.loginName}">修改</a>
-					</shiro:hasPermission>
-				</td>
+					</td>
+				</shiro:hasPermission>
 			</tr>
 		</c:forEach>
 		</tbody>		
