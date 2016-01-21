@@ -20,7 +20,13 @@
 	<logger name="org.springside.examples.quickstart" level="DEBUG" />
 
 	<!--log4jdbc -->
-	<logger name="jdbc.sqltiming" level="DEBUG"/>
+	<logger name="jdbc.sqltiming" level="OFF"/>
+
+	<!-- hibernate SQL 配置 -->
+	<!-- 0. 打印 sql -->
+	<logger name="org.hibernate.SQL" level="DEBUG"/>
+	<!-- 1. 打印 参数 -->
+	<logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE"/>
 
 	<root level="ERROR">
 		<appender-ref ref="console" />
